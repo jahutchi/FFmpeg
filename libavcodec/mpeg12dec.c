@@ -1613,7 +1613,7 @@ static int mpeg_field_start(MpegEncContext *s, const uint8_t *buf, int buf_size)
             av_log(s->avctx, AV_LOG_ERROR, "first field missing\n");
             return AVERROR_INVALIDDATA;
         }
-
+/*
         if (s->avctx->hwaccel) {
             if ((ret = FF_HW_SIMPLE_CALL(s->avctx, end_frame)) < 0) {
                 av_log(avctx, AV_LOG_ERROR,
@@ -1621,7 +1621,7 @@ static int mpeg_field_start(MpegEncContext *s, const uint8_t *buf, int buf_size)
                 return ret;
             }
         }
-
+*/
         for (i = 0; i < 4; i++) {
             s->current_picture.f->data[i] = s->current_picture_ptr->f->data[i];
             if (s->picture_structure == PICT_BOTTOM_FIELD)
